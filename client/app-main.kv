@@ -1,0 +1,229 @@
+#:kivy 1.11.1
+#:import MDSwapTransition kivymd.uix.transition.transition.MDSwapTransition
+
+# icons paths
+#: set eye "server\media\images\eye"
+#: set eye-off "server\media\images\eye-off"
+
+
+<Manager>:
+    Login:
+    Register:
+    Menu:
+    Learning:
+    Profile:
+    UserSettings:
+    
+<Login>:
+    name: "login"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    MDCard:
+        orientation: "vertical"
+        size_hint: 0.8, 0.6
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        elevation: 5
+        RelativeLayout:
+            pos_hint: {"center_x":0.5, "center_y":0.5}
+            size_hint: 1,1 
+            GridLayout:
+                anchor_y: "top"
+                id: login_screen_layout
+                rows: 3
+                size_hint: .9, .9
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+                padding: "15dp"
+                spacing: "8dp"
+                MDCard:
+                    size_hint_y: None
+                    height: username_field.height
+                    elevation: 3
+                    padding: "6dp", "0dp"
+                    MDTextField:
+                        id: username_field
+                        hint_text: "username or email"
+                        helper_text: "Invalid username or email"
+                        helper_text_mode: "on_error"
+                        icon_left: "account"
+                        on_height: root.height = self.height
+                
+                MDCard:
+                    size_hint_y: None
+                    height: password_field.height
+                    elevation: 3
+                    padding: "6dp", "0dp"
+                    MDTextField:
+                        id: password_field
+                        hint_text: "password"
+                        password: True
+                        icon_left: "key-variant"
+                        on_height: root.height = self.height
+
+                    MDIconButton:
+                        icon: "eye-off"
+                        pos_hint: {"center_y": .5}
+                        pos: password_field.width - self.width + dp(8), 0
+                        theme_text_color: "Hint"
+                        elevation: 1
+                        on_release:
+                            self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                            password_field.password = False if password_field.password is True else True
+                
+                MDRaisedButton:
+                    id: login_button
+                    text: "Login"
+                    size_hint: .95, None
+                    md_bg_color: app.theme_cls.primary_color
+                    on_release: 
+                        root.manager.current = "menu"
+                
+            BoxLayout:
+                id: registration_layout
+                orientation: "vertical"
+                size_hint: .9, .1
+                pos_hint: {"center_x":.85, "center_y":.3}
+                MDLabel:
+                    text: "Don't have an account?"
+                    height: "30dp"
+                    valign: "center"
+                    theme_text_color: "Secondary"
+                MDTextButton:
+                    text: "Register now!"
+                    on_press: 
+                        root.manager.current = "register"
+                    theme_text_color: "Secondary"
+     
+            
+<Register>:
+    name: "register"
+    canvas.before:
+        Color:
+            rgba: 1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    MDCard:
+        orientation: "vertical"
+        size_hint: 0.8, 0.65
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        elevation: 5
+        FloatLayout:
+            pos_hint: {"center_x":.5, "center_y":.5}
+            size_hint: 1, .9
+            MDIconButton:
+                icon: "arrow-left-bold-circle-outline"
+                pos_hint: {"x":.05, "top":1}
+                elevation: 8
+                on_release: 
+                    root.manager.current = "login"
+                theme_text_color: "Hint"
+                
+            GridLayout:
+                id: login_screen_layout
+                rows: 5
+                size_hint: .9, 1
+                pos_hint: {"center_x":0.5, "center_y":0.43}
+                padding: "15dp"
+                spacing: "10dp"
+                MDCard:
+                    pos_hint: {"center_x":.5, "top":.9}
+                    size_hint_y: None
+                    height: email_field.height
+                    elevation: 3
+                    padding: "6dp", "0dp"
+                    MDTextField:
+                        id: email_field
+                        hint_text: "email"
+                        helper_text: "Invalid"
+                        helper_text_mode: "on_error"
+                        icon_left: "account"
+                        on_height: root.height = self.height
+
+                MDCard:
+                    pos_hint: {"center_x":.5, "top":0.68}
+                    size_hint_y: None
+                    height: username_field.height
+                    elevation: 3
+                    padding: "6dp", "0dp"
+                    MDTextField:
+                        id: username_field
+                        hint_text: "username"
+                        helper_text: "Invalid"
+                        helper_text_mode: "on_error"
+                        icon_left: "account"
+                        on_height: root.height = self.height
+
+                MDCard:
+                    pos_hint: {"center_x":.5, "top":.45}
+                    size_hint_y: None
+                    height: password_field.height
+                    elevation: 3
+                    padding: "6dp", "0dp"
+                    MDTextField:
+                        id: password_field
+                        hint_text: "password"
+                        password: True
+                        icon_left: "key-variant"
+                        on_height: root.height = self.height
+                
+                MDCard:
+                    pos_hint: {"center_x":.5, "top":.23}
+                    size_hint_y: None
+                    height: password_field.height
+                    elevation: 3
+                    padding: "6dp", "0dp"
+                    MDTextField:
+                        id: repeat_password_field
+                        hint_text: "repeat password"
+                        password: True
+                        icon_left: "key-variant"
+                        on_height: root.height = self.height
+
+                MDRaisedButton:
+                    id: login_button
+                    text: "Register"
+                    size_hint: .95, None
+                    pos_hint: {"center_x":.5, "top":.1}
+                    md_bg_color: app.theme_cls.primary_color
+
+<Menu>:
+    name: "menu"
+    MDBottomNavigation:
+        selected_color_background: 255/255, 169/255, 25/255, .8
+        text_color_active: "lightgrey"
+
+        MDBottomNavigationItem:
+            name: "learning"
+            text: "Learning"
+            icon: "server/media/images/learn-tab.png"
+            Learning:
+
+        MDBottomNavigationItem:
+            name: "profile"
+            text: "Profile"
+            icon: "server/media/images/account.png"
+            Profile:
+
+<Learning>:
+    name: "learning"
+    MDLabel:
+        text: "Learning"
+        halign: "center"
+
+<Profile>:
+    name: "profile"
+    MDLabel:
+        text: "Profile"
+        halign: "center"
+
+<UserSettings>:
+    name: "usersettings"
+    MDLabel:
+        text: "Settings"
+        halign: "center"
