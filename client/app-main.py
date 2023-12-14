@@ -20,6 +20,9 @@ class Menu(MDScreen):
 class Learning(MDScreen):
     pass
 
+class Tests(MDScreen):
+    pass
+
 class Profile(MDScreen):
     pass
 
