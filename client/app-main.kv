@@ -14,6 +14,12 @@
     Tests:
     Profile:
     UserSettings:
+
+<LearningManager>:
+    Learning:
+    ConjugationHomeScreen:
+    PastFormsHomeScreen:
+    RectionHomeScreen:
     
 <Login>:
     name: "login"
@@ -203,7 +209,7 @@
             name: "learning"
             text: "Learning"
             icon: "server/media/images/learn-tab.png"
-            Learning:
+            LearningManager:
 
         MDBottomNavigationItem:
             name: "tests"
@@ -248,6 +254,8 @@
                 size_hint: .95, 0.25
                 pos_hint: {"center_x":.5}
                 md_bg_color: app.theme_cls.primary_color
+                on_release: 
+                    root.manager.current = "conjHome"
 
             MDRaisedButton:
                 text: "Past forms"
@@ -256,6 +264,8 @@
                 size_hint: .95, 0.25
                 pos_hint: {"center_x":.5}
                 md_bg_color: app.theme_cls.primary_color
+                on_release: 
+                    root.manager.current = "pforHome"
 
             MDRaisedButton:
                 text: "Rection"
@@ -264,6 +274,8 @@
                 size_hint: .95, 0.25
                 pos_hint: {"center_x":.5}
                 md_bg_color: app.theme_cls.primary_color
+                on_release: 
+                    root.manager.current = "recHome"
 
 <Tests>:
     name: "tests"

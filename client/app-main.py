@@ -6,6 +6,9 @@ from kivy.core.text import LabelBase
 from kivy.core.window import Window
 Window.size = (420, 640)
 
+Builder.load_file("conjugation.kv")
+Builder.load_file("rection.kv")
+Builder.load_file("pastforms.kv")
 Builder.load_file("app-main.kv")
 
 class Login(MDScreen):
@@ -20,6 +23,15 @@ class Menu(MDScreen):
 class Learning(MDScreen):
     pass
 
+class ConjugationHomeScreen(MDScreen):
+    pass
+
+class PastFormsHomeScreen(MDScreen):
+    pass
+
+class RectionHomeScreen(MDScreen):
+    pass
+
 class Tests(MDScreen):
     pass
 
@@ -30,6 +42,9 @@ class UserSettings(MDScreen):
     pass
 
 class Manager(MDScreenManager):
+    pass
+
+class LearningManager(MDScreenManager):
     pass
 
 class app(MDApp):
