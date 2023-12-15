@@ -2,7 +2,7 @@ from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
-
+from kivy.core.text import LabelBase
 from kivy.core.window import Window
 Window.size = (420, 640)
 
@@ -38,8 +38,11 @@ class app(MDApp):
         self.theme_cls.material_style = "M3"
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.accent_palette = "Red"
+        self.title = "Gerb"
         sm = Manager()
     
         return sm
+    
+LabelBase.register(name="preah", fn_regular="./server/media/fonts/Preahvihear-Regular.ttf")
 
 app().run()
