@@ -4,12 +4,12 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
+from os import listdir, path
 Window.size = (420, 640)
 
-Builder.load_file("conjugation.kv")
-Builder.load_file("rection.kv")
-Builder.load_file("pastforms.kv")
-Builder.load_file("app-main.kv")
+for file in listdir("./client/kv_files"):
+    f = path.join("./client/kv_files/", file)
+    Builder.load_file(f)
 
 class Login(MDScreen):
     pass
@@ -45,6 +45,9 @@ class Manager(MDScreenManager):
     pass
 
 class LearningManager(MDScreenManager):
+    pass
+
+class ProfileManager(MDScreenManager):
     pass
 
 class app(MDApp):
