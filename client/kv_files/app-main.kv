@@ -1,0 +1,68 @@
+#:kivy 1.11.1
+#:import MDSwapTransition kivymd.uix.transition.transition.MDSwapTransition
+
+# icons paths
+#: set eye "server\media\images\eye"
+#: set eye-off "server\media\images\eye-off"
+
+
+<Manager>:
+    Login:
+    Register:
+    Menu:
+
+<LearningManager>:
+    Learning:
+    ConjugationHomeScreen:
+    PastFormsHomeScreen:
+    RectionHomeScreen:
+
+<ProfileManager>:
+    Profile:
+    UserSettings:
+
+<Menu>:
+    name: "menu"
+    MDBottomNavigation:
+        selected_color_background: 255/255, 169/255, 25/255, .8
+        text_color_active: "lightgrey"
+
+        MDBottomNavigationItem:
+            name: "learning"
+            text: "Learning"
+            icon: "server/media/images/learn-tab.png"
+            on_tab_press: lman.current = 'learningHome'
+            LearningManager:
+                id: lman
+
+        MDBottomNavigationItem:
+            name: "tests"
+            text: "Tests"
+            icon: "server/media/images/tests.png"
+            Tests:
+
+        MDBottomNavigationItem:
+            name: "profile"
+            text: "Profile"
+            icon: "server/media/images/account.png"
+            on_tab_press: pman.current = 'profile'
+            ProfileManager:
+                id: pman
+
+<Tests>:
+    name: "tests"
+    MDLabel:
+        text: "Tests"
+        halign: "center"
+
+<Profile>:
+    name: "profile"
+    MDLabel:
+        text: "Profile"
+        halign: "center"
+
+<UserSettings>:
+    name: "usersettings"
+    MDLabel:
+        text: "Settings"
+        halign: "center"
