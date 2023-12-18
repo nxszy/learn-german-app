@@ -1,0 +1,195 @@
+achten,respect, think highly of
+anbieten,to offer
+ändern,to change
+anzeigen,Show
+aufbauen,build up
+aufnehmen,record, tape
+bauen,to build
+beachten,note
+bedeuten,mean
+befinden,are located
+beginnen,start
+begleiten,accompany
+behandeln,to treat
+bekommen,to get
+benötigen,need
+benutzen,to use
+berichten,to report
+beschäftigen,employ
+beschreiben,describe
+besitzen,have
+bestätigen,to confirm
+bestehen,consist
+bestellen,to order
+bestimmen,determine
+besuchen,visit
+betragen,be
+betreffen,affect
+betreiben,operate
+bewegen,move
+bezeichnen,describe
+beziehen,Respectively
+bieten,Offer
+bilden,form
+bitten,ask
+bleiben,stay
+brauchen,need
+bringen,bring
+darstellen,represent
+denken,think
+dienen,to serve
+diskutieren,to discuss
+durchführen,carry out
+dürfen,allowed to
+eignen,suitable
+einsetzen,deploy
+empfehlen,recommend
+entdecken,discover
+entfernen,remove
+enthalten,contain
+entscheiden,decide
+entsprechen,correspond
+entstehen,arise
+entwickeln,develop
+erfahren,Experienced
+erfolgen,respectively
+erfüllen,fulfill
+ergeben,surrender
+erhalten,receive
+erhöhen,increase
+erinnern,recall
+erkennen,detect
+erklären,to explain
+erlauben,allow
+erleben,experience
+ermöglichen,enable
+erreichen,to reach
+erscheinen,appear
+erstellen,create
+erwarten,expect
+erzählen,tell
+fahren,drive
+fallen,fall
+fehlen,absence
+feiern,to celebrate
+finden,Find
+folgen,consequences
+fordern,demand
+fördern,promote
+fragen,ask
+freuen,looking forward
+fühlen,feel
+führen,to lead
+funktionieren,function
+geben,give
+gehen,walk
+gehören,belong
+gelingen,success
+gelten,be valid
+genießen,enjoy
+geschehen,happen
+gestalten,shape
+gewinnen,win
+glauben,believe
+gründen,establish
+halten,hold
+handeln,act
+heißen,be called
+helfen,help
+herstellen,produce
+hoffen,to hope
+hören,Listen
+informieren,to inform
+kaufen,to buy
+kennen,know
+klicken,click
+kommen,come
+kosten,costs
+laden,load
+lassen,to let
+laufen,to run
+leben,Life
+legen,lay
+leisten,Afford
+lernen,learn
+lesen,read
+lieben,love
+liefern,deliver
+liegen,lie
+lösen,to solve
+machen,do
+meinen,say
+melden,Report
+mögen,to like
+müssen,have to
+nehmen,to take
+nennen,call
+nutzen,use
+öffnen,to open
+passen,fit
+passieren,happen
+planen,to plan
+präsentieren,present
+reichen,pass
+richten,judge
+rufen,call
+sagen,say
+sammeln,collect
+schaffen,create
+schauen,watch
+scheinen,seem to be
+schlagen,beat
+schließen,conclude
+schützen,protect
+sehen,see
+setzen,put
+sichern,to back up
+sitzen,sit
+sollen,should
+sorgen,to care
+sparen,save up
+spielen,play
+sprechen,speak
+starten,start
+stattfinden,occur
+stehen,stand
+steigen,climb
+stellen,put
+suchen,search
+teilen,share
+tragen,carry
+treffen,to meet
+treten,to step
+tun,to do
+übernehmen,take over
+überzeugen,convince
+umsetzen,implement
+unterstützen,support
+verändern,change
+verbessern,improve
+verbinden,connect
+verfügen,feature
+vergessen,to forget
+verkaufen,to sell
+verlassen,leave
+verlieren,to lose
+vermitteln,convey
+veröffentlichen,publish
+verstehen,understand
+versuchen,to attempt
+vertreten,represented
+verwenden,use
+vorstellen,imagine
+wachsen,to grow
+wählen,choose
+warten,waiting
+weisen,point
+werden,will
+wirken,Act
+wissen,knowledge
+wollen,want
+wünschen,to wish
+zählen,counting
+zahlen,numbers
+zeigen,demonstrate
+ziehen,pull
