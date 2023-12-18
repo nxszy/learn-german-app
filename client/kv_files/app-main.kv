@@ -11,7 +11,8 @@
     Menu:
 
 <LearningManager>:
-    Learning:
+    LearningHome1:
+    LearningHome2:
     ConjugationHomeScreen:
     PastFormsHomeScreen:
     RectionHomeScreen:
@@ -30,7 +31,9 @@
             name: "learning"
             text: "Learning"
             icon: "server/media/images/learn-tab.png"
-            on_tab_press: lman.current = 'learningHome'
+            on_tab_press: 
+                lman.current = 'learningHome1'
+                lman.learningChosen = ""
             LearningManager:
                 id: lman
 

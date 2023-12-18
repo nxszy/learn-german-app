@@ -1,6 +1,6 @@
 #:kivy 1.11.1
 
-<Learning>:
+<LearningHome1>:
 
     canvas.before:
         Color:
@@ -9,7 +9,7 @@
             pos: self.pos
             size: self.size
 
-    name: "learningHome"
+    name: "learningHome1"
 
     GridLayout:
 
@@ -39,8 +39,8 @@
                 size_hint: .95, 0.25
                 pos_hint: {"center_x":.5}
                 md_bg_color: app.theme_cls.primary_color
-                on_release: 
-                    root.manager.current = "conjHome"
+                on_press: 
+                    root.handle_button("learn_Conj")
 
             MDRaisedButton:
                 text: "Past forms"
@@ -50,7 +50,7 @@
                 pos_hint: {"center_x":.5}
                 md_bg_color: app.theme_cls.primary_color
                 on_release: 
-                    root.manager.current = "pforHome"
+                    root.handle_button("learn_Past")
 
             MDRaisedButton:
                 text: "Rection"
@@ -60,4 +60,4 @@
                 pos_hint: {"center_x":.5}
                 md_bg_color: app.theme_cls.primary_color
                 on_release: 
-                    root.manager.current = "recHome"
+                    root.handle_button("learn_Rection")
