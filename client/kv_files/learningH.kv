@@ -1,6 +1,14 @@
 #:kivy 1.11.1
 
 <Learning>:
+
+    canvas.before:
+        Color:
+            rgba: 0,0,0,0.6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
     name: "learningHome"
 
     GridLayout:

@@ -4,7 +4,7 @@
     name: "login"
     canvas.before:
         Color:
-            rgba: 1, 1, 1, 1
+            rgba: 0,0,0,0.6
         Rectangle:
             pos: self.pos
             size: self.size
@@ -37,6 +37,9 @@
                         helper_text_mode: "on_error"
                         icon_left: "account"
                         on_height: root.height = self.height
+                        font_name_helper_text: "preah"
+                        font_name_hint_text: "preah"
+                        font_size: "25dp"
                 
                 MDCard:
                     size_hint_y: None
@@ -49,6 +52,9 @@
                         password: True
                         icon_left: "key-variant"
                         on_height: root.height = self.height
+                        font_name_helper_text: "preah"
+                        font_name_hint_text: "preah"
+                        font_size: "20dp"
 
                     MDIconButton:
                         icon: "eye-off"

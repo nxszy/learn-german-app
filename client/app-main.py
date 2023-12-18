@@ -4,8 +4,10 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
+from kivy.config import Config
 from os import listdir, path
-Window.size = (420, 640)
+
+Config.set('graphics', 'resizable', False)
 
 for file in listdir("./client/kv_files"):
     f = path.join("./client/kv_files/", file)
@@ -52,10 +54,11 @@ class ProfileManager(MDScreenManager):
 
 class app(MDApp):
     def build(self):
-        self.theme_cls.theme_style = "Dark"
+        Window.size = (420, 640)
+        self.theme_cls.theme_style = "Light"
         self.theme_cls.material_style = "M3"
-        self.theme_cls.primary_palette = "DeepOrange"
-        self.theme_cls.accent_palette = "Red"
+        self.theme_cls.primary_palette = "Cyan"
+        self.theme_cls.accent_palette = "Teal"
         self.title = "Gerb"
         sm = Manager()
     

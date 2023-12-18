@@ -1,5 +1,4 @@
 #:kivy 1.11.1
-#:import MDSwapTransition kivymd.uix.transition.transition.MDSwapTransition
 
 # icons paths
 #: set eye "server\media\images\eye"
@@ -24,8 +23,8 @@
 <Menu>:
     name: "menu"
     MDBottomNavigation:
-        selected_color_background: 255/255, 169/255, 25/255, .8
-        text_color_active: "lightgrey"
+        selected_color_background: app.theme_cls.primary_color
+        text_color_active: "black"
 
         MDBottomNavigationItem:
             name: "learning"
