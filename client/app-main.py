@@ -73,7 +73,7 @@ class ConjugationHomeScreen(MDScreen):
     def check_content(self):
 
         c_btn = self.ids['conj_check_button']
-
+        
         if c_btn.text == "Check":
         
             g_word = self.ids["r_word"].text
@@ -91,12 +91,7 @@ class ConjugationHomeScreen(MDScreen):
             c_btn.text = "Next"
         
         elif c_btn.text == "Next":
-            
-            for id in self.btn_ids:
-                self.ids[id].error = False
-                self.ids[id].text = ""
-            
-            c_btn.text = "Check"
+            self.clear_screen()
     
 
     def on_cancel_button(self):
@@ -104,17 +99,33 @@ class ConjugationHomeScreen(MDScreen):
             self.dialog = MDDialog(
                 title="Do you want to leave?",
                 text="All progress will be lost.",
+                size_hint=(0.85, None),
                 buttons=[
                     MDRaisedButton(
-                        text="Leave"
+                        text="Leave", on_release=partial(self.handle_dialog, 0)
                     ),
                     MDRaisedButton(
-                        text="Cancel"
+                        text="Cancel", on_release=partial(self.handle_dialog, 1)
                     ),
                 ],
             )
         self.dialog.open()
-        
+    
+    def handle_dialog(self, response, instance):
+        if response == 0:
+            self.manager.current = "learningHome1"
+        elif response == 1:
+            self.clear_screen()
+        self.dialog.dismiss()
+
+    def clear_screen(self):
+
+        for id in self.btn_ids:
+                self.ids[id].error = False
+                self.ids[id].text = ""
+            
+        self.ids["conj_check_button"].text = "Check"
+
 
 class PastFormsHomeScreen(MDScreen):
     pass
