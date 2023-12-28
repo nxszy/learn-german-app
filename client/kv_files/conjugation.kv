@@ -2,7 +2,121 @@
 
 <ConjugationHomeScreen>:
     name: "conj"
-     
-    MDLabel:
-        text: "siema"
-        halign: "center"
+    
+    canvas.before:
+        Color:
+            rgba: 0,0,0,0.6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    MDCard:
+        orientation: "vertical"
+        size_hint: .9, .9
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        elevation: 5
+
+        GridLayout:
+            rows: 6
+            size_hint: .9, .9
+            pos_hint: {"center_x":.5, "top":0.95}
+            spacing: "5dp"
+            padding: ["3dp", "5dp", "3dp", "10dp"]
+
+            GridLayout:
+                cols: 2
+                size_hint: 1, .1
+                pos_hint: {"center_x":.5}
+                spacing: "5dp"
+
+                MDProgressBar:
+                    id: conj_progress_bar
+                    size_hint: .8, .1
+                
+                MDIconButton:
+                    icon: "server/media/images/close.png"
+                    size_hint: .2, 1
+                    on_release: root.on_cancel_button()
+
+            MDLabel:
+                id: r_word
+                text: "eat"
+                size_hint: 1, .1
+                halign: "center"
+                font_name: "preah"
+                font_size: "25dp"
+
+            GridLayout:
+                cols: 2
+                size_hint: 1, .2
+                pos_hint: {"center_x":.5}
+                spacing: "10dp"
+
+                MDTextField:
+                    id: sg_I
+                    hint_text: "Ich"
+                    on_height: root.height = self.height
+                    font_name_hint_text: "preah"
+                    error_color: (255,0,0)
+                    font_size: "25dp"
+                
+                MDTextField:
+                    id: pl_I
+                    hint_text: "Wir"
+                    on_height: root.height = self.height
+                    font_name_hint_text: "preah"
+                    error_color: (255,0,0)
+                    font_size: "25dp"
+            
+            GridLayout:
+                cols: 2
+                size_hint: 1, .2
+                pos_hint: {"center_x":.5}
+                spacing: "10dp"
+
+                MDTextField:
+                    id: sg_II
+                    hint_text: "Du"
+                    on_height: root.height = self.height
+                    font_name_hint_text: "preah"
+                    error_color: (255,0,0)
+                    font_size: "25dp"
+                
+                MDTextField:
+                    id: pl_II
+                    hint_text: "Ihr"
+                    on_height: root.height = self.height
+                    font_name_hint_text: "preah"
+                    error_color: (255,0,0)
+                    font_size: "25dp"
+
+            GridLayout:
+                cols: 2
+                size_hint: 1, .2
+                pos_hint: {"center_x":.5}
+                spacing: "10dp"
+
+                MDTextField:
+                    id: sg_III
+                    hint_text: "Er/Sie/Es"
+                    on_height: root.height = self.height
+                    font_name_hint_text: "preah"
+                    error_color: (255,0,0)
+                    font_size: "25dp"
+                
+                MDTextField:
+                    id: pl_III
+                    hint_text: "sie/Sie"
+                    on_height: root.height = self.height
+                    font_name_hint_text: "preah"
+                    error_color: (255,0,0)
+                    font_size: "25dp"
+
+            MDRaisedButton:
+                id: conj_check_button
+                text: "Check"
+                font_name: "preah"
+                font_size: "25dp"
+                size_hint: .95, .1
+                md_bg_color: app.theme_cls.primary_color
+                on_release: root.check_content()

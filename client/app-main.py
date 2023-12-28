@@ -7,6 +7,7 @@ from kivy.core.window import Window
 from kivy.config import Config
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.button import MDRaisedButton
+from kivymd.uix.dialog import MDDialog
 from os import listdir, path
 from functools import partial
 
@@ -28,7 +29,6 @@ class Menu(MDScreen):
 class LearningHome1(MDScreen):
     
     def handle_button(self, id):
-        print(id)
         match str(id):
             case "learn_Conj":
                 self.manager.learningChosen = "conj"
@@ -56,7 +56,7 @@ class LearningHome2(MDScreen):
     
     def handle_set_button(self, id):
         
-        self.manager.verbsSet = [] # get request w zależności od pId z bazy - id guzika to pId w bazie
+        self.manager.verbsSet = {'eat':['esse', 'isst', 'isst', 'essen', 'esst', 'essen']} # get request w zależności od pId z bazy - id guzika to pId w bazie
 
         self.manager.current = self.manager.learningChosen
 
@@ -65,7 +65,56 @@ class LearningHome2(MDScreen):
 
 
 class ConjugationHomeScreen(MDScreen):
-    pass
+
+    dialog = None
+
+    btn_ids = ["sg_I", "sg_II", "sg_III", "pl_I", "pl_II", "pl_III"]
+
+    def check_content(self):
+
+        c_btn = self.ids['conj_check_button']
+
+        if c_btn.text == "Check":
+        
+            g_word = self.ids["r_word"].text
+
+            for i, id in enumerate(self.btn_ids):
+
+                correct_form =  self.manager.verbsSet[g_word][i]
+                
+                if self.ids[id].text != correct_form:
+                    self.ids[id].text = correct_form
+                    self.ids[id].error = True
+                else:
+                    pass
+
+            c_btn.text = "Next"
+        
+        elif c_btn.text == "Next":
+            
+            for id in self.btn_ids:
+                self.ids[id].error = False
+                self.ids[id].text = ""
+            
+            c_btn.text = "Check"
+    
+
+    def on_cancel_button(self):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                title="Do you want to leave?",
+                text="All progress will be lost.",
+                buttons=[
+                    MDRaisedButton(
+                        text="Leave"
+                    ),
+                    MDRaisedButton(
+                        text="Cancel"
+                    ),
+                ],
+            )
+        self.dialog.open()
+        
 
 class PastFormsHomeScreen(MDScreen):
     pass
