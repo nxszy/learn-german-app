@@ -17,11 +17,11 @@
         elevation: 5
 
         GridLayout:
-            rows: 6
+            rows: 7
             size_hint: .9, .9
             pos_hint: {"center_x":.5, "top":0.95}
             spacing: "5dp"
-            padding: ["3dp", "5dp", "3dp", "10dp"]
+            padding: ["3dp", "10dp", "3dp", "10dp"]
 
             GridLayout:
                 cols: 2
@@ -35,8 +35,9 @@
                 
                 MDIconButton:
                     icon: "server/media/images/close.png"
-                    size_hint: .2, 1
+                    size_hint: .1, 1
                     on_release: root.on_cancel_button()
+
 
             MDLabel:
                 id: r_word
@@ -46,9 +47,18 @@
                 font_name: "preah"
                 font_size: "25dp"
 
+            MDTextField:
+                id: inf
+                size_hint: .7, .15
+                hint_text: "Infinitive"
+                on_height: root.height = self.height
+                font_name_hint_text: "preah"
+                error_color: (255,0,0)
+                font_size: "25dp"
+
             GridLayout:
                 cols: 2
-                size_hint: 1, .2
+                size_hint: 1, .15
                 pos_hint: {"center_x":.5}
                 spacing: "10dp"
 
@@ -70,7 +80,7 @@
             
             GridLayout:
                 cols: 2
-                size_hint: 1, .2
+                size_hint: 1, .15
                 pos_hint: {"center_x":.5}
                 spacing: "10dp"
 
@@ -92,7 +102,7 @@
 
             GridLayout:
                 cols: 2
-                size_hint: 1, .2
+                size_hint: 1, .15
                 pos_hint: {"center_x":.5}
                 spacing: "10dp"
 

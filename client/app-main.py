@@ -68,7 +68,7 @@ class ConjugationHomeScreen(MDScreen):
 
     dialog = None
 
-    btn_ids = ["sg_I", "sg_II", "sg_III", "pl_I", "pl_II", "pl_III"]
+    btn_ids = ["inf", "sg_I", "sg_II", "sg_III", "pl_I", "pl_II", "pl_III"]
 
     def check_content(self):
 
