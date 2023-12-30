@@ -10,6 +10,9 @@ from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.dialog import MDDialog
 from os import listdir, path
 from functools import partial
+import requests
+from kivy.clock import Clock
+from kivy.uix.recycleview import RecycleView
 
 Config.set('graphics', 'resizable', False)
 
@@ -49,38 +52,51 @@ class LearningHome2(MDScreen):
         box = BoxLayout(orientation="vertical", spacing="5dp")
         self.btnBox = box
         
-        default_btn = MDRaisedButton(id="0", text="default", size_hint=(1, None), height="300", on_release=partial(self.handle_set_button))
+        default_btn = MDRaisedButton(id="0", text="default", size_hint=(1, None), height="300", on_release=partial(self.handle_set_button, 0))
         box.add_widget(default_btn)
 
         self.ids['setList'].add_widget(box)
     
-    def handle_set_button(self, id):
+    def handle_set_button(self, id, instance):
         
-        self.manager.verbsSet = {'eat':['esse', 'isst', 'isst', 'essen', 'esst', 'essen']} # get request w zależności od pId z bazy - id guzika to pId w bazie
+        self.get_learning_set(id)
+        # get request w zależności od pId z bazy - id guzika to pId w bazie
 
         self.manager.current = self.manager.learningChosen
 
     def on_leave(self):
         self.ids['setList'].remove_widget(self.btnBox)
 
+    def get_learning_set(self, id):
+        match id:
+            case 0:
+                verbs = requests.get('http://127.0.0.1:8000/conj/').json()
+        
+        for i, verb in enumerate(verbs):
+            self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 
+                                    verb['sg_Ip_form'], verb['sg_IIp_form'], verb['sg_IIIp_form'],
+                                    verb['pl_Ip_form'], verb['pl_IIp_form'], verb['pl_IIIp_form']]
 
 class ConjugationHomeScreen(MDScreen):
 
     dialog = None
 
+    iter = 0
+
     btn_ids = ["inf", "sg_I", "sg_II", "sg_III", "pl_I", "pl_II", "pl_III"]
+
+    def on_pre_enter(self):
+        self.reset_screen()
 
     def check_content(self):
 
         c_btn = self.ids['conj_check_button']
         
         if c_btn.text == "Check":
-        
-            g_word = self.ids["r_word"].text
 
             for i, id in enumerate(self.btn_ids):
 
-                correct_form =  self.manager.verbsSet[g_word][i]
+                correct_form =  self.manager.learningSet[self.iter][i+1]
                 
                 if self.ids[id].text != correct_form:
                     self.ids[id].text = correct_form
@@ -88,12 +104,19 @@ class ConjugationHomeScreen(MDScreen):
                 else:
                     pass
 
-            c_btn.text = "Next"
+            self.iter += 1
+            
+            if self.iter < len(self.manager.learningSet):
+                c_btn.text = "Next"
+            else:
+                c_btn.text = "Results"
         
         elif c_btn.text == "Next":
-            self.clear_screen()
-    
+            self.reset_screen()
 
+        elif c_btn.text == "Results":
+            self.manager.current = 'ResultsScreen'
+    
     def on_cancel_button(self):
         if not self.dialog:
             self.dialog = MDDialog(
@@ -115,22 +138,27 @@ class ConjugationHomeScreen(MDScreen):
         if response == 0:
             self.manager.current = "learningHome1"
         elif response == 1:
-            self.clear_screen()
+            self.reset_screen()
         self.dialog.dismiss()
 
-    def clear_screen(self):
+    def reset_screen(self):
+
+        self.ids["r_word"].text = self.manager.learningSet[self.iter][0]
 
         for id in self.btn_ids:
-                self.ids[id].error = False
-                self.ids[id].text = ""
-            
+            self.ids[id].error = False
+            self.ids[id].text = ""
+        
         self.ids["conj_check_button"].text = "Check"
-
+    
 
 class PastFormsHomeScreen(MDScreen):
     pass
 
 class RectionHomeScreen(MDScreen):
+    pass
+
+class ResultsScreen(MDScreen):
     pass
 
 class Tests(MDScreen):
@@ -148,7 +176,7 @@ class Manager(MDScreenManager):
 class LearningManager(MDScreenManager):
     
     learningChosen = ""
-    verbsSet = []
+    learningSet = {}
 
 class ProfileManager(MDScreenManager):
     pass

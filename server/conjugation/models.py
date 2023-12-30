@@ -11,9 +11,6 @@ class ConjVerb(models.Model):
     pl_Ip_form = models.CharField(max_length=30)
     pl_IIp_form = models.CharField(max_length=30)
     pl_IIIp_form = models.CharField(max_length=30)
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
+    
     def __str__(self):
         return self.translation
