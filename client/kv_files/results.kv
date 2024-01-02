@@ -2,7 +2,39 @@
 
 <ResultsScreen>:
     name: "ResultsScreen"
-    Label:
-        text: "sieeeema"
-        halign: "center"
-        valign: "center"
+    
+    MDCard:
+        orientation: "vertical"
+        size_hint: .9, .9
+        pos_hint: {"center_x":0.5, "center_y":0.5}
+        elevation: 5
+        GridLayout:
+            rows: 4
+            size_hint: .9, .9
+            pos_hint: {"center_x":.5, "top":0.95}
+            spacing: "5dp"
+            padding: ["3dp", "10dp", "3dp", "10dp"]
+
+            MDLabel:
+                id: message
+                size_hint: 1, .2
+                pos_hint: {"center_x":.5, "top":.9}
+                halign: "center"
+                font_name: "preah"
+                font_size: "25dp"
+            
+            MDLabel:
+                id: result
+                size_hint: 1, .2
+                halign: "center"
+                font_name: "preah"
+                font_size: "25dp"
+
+            BoxLayout:
+                size_hint: 1, .5
+            
+            MDRaisedButton:
+                id: result_btn
+                size_hint: .9, .1
+                text: "Finish test"
+                on_release: root.manager.current = "learningHome1"
