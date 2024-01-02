@@ -1,13 +1,13 @@
-achten,respect, think highly of
+achten,respect
 anbieten,to offer
 ändern,to change
-anzeigen,Show
+anzeigen,show
 aufbauen,build up
-aufnehmen,record, tape
+aufnehmen,record
 bauen,to build
 beachten,note
 bedeuten,mean
-befinden,are located
+befinden,to be located
 beginnen,start
 begleiten,accompany
 behandeln,to treat
@@ -28,8 +28,8 @@ betreffen,affect
 betreiben,operate
 bewegen,move
 bezeichnen,describe
-beziehen,Respectively
-bieten,Offer
+beziehen,obtain
+bieten,offer
 bilden,form
 bitten,ask
 bleiben,stay
@@ -51,8 +51,8 @@ entscheiden,decide
 entsprechen,correspond
 entstehen,arise
 entwickeln,develop
-erfahren,Experienced
-erfolgen,respectively
+erfahren,experience
+erfolgen,occur
 erfüllen,fulfill
 ergeben,surrender
 erhalten,receive
@@ -72,7 +72,7 @@ fahren,drive
 fallen,fall
 fehlen,absence
 feiern,to celebrate
-finden,Find
+finden,find
 folgen,consequences
 fordern,demand
 fördern,promote
@@ -98,7 +98,7 @@ heißen,be called
 helfen,help
 herstellen,produce
 hoffen,to hope
-hören,Listen
+hören,listen
 informieren,to inform
 kaufen,to buy
 kennen,know
