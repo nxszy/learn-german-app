@@ -1,9 +1,9 @@
 import pandas as pd
  
-df_infinitive = pd.read_csv("verbs.csv", delimiter=",", header=None, index_col=None)
-df_forms = pd.read_csv("forms.csv", delimiter=",", header=None, index_col=None)
+df_infinitive = pd.read_csv("verbs.csv", delimiter=",", index_col=None)
+df_forms = pd.read_csv("forms.csv", delimiter=",", index_col=None)
 
-df_final = pd.concat([df_infinitive, df_forms], axis=1)
+df_final = pd.merge(df_infinitive, df_forms, on="infinitive")
 column_names = ["translation", "infinitive", "sg_Ip_form", "sg_IIp_form", "sg_IIIp_form", "pl_Ip_form", "pl_IIp_form", "pl_IIIp_form"]
 
 df_final.columns = column_names

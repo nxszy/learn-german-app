@@ -13,7 +13,7 @@ def extract_forms(verbs):
             session_obj = requests.Session()
             response = session_obj.get(url, headers={"User-Agent": "Mozilla/5.0"})
 
-            forms = []
+            forms = [verb]
             for form in ("ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"):
                 pattern = '<div class="conj-person">{}</div>.*?<div class="conj-result">(.*?)</div>'.format(form)
                 try:
@@ -45,7 +45,7 @@ print(all_forms)
 
 with open("forms.csv", "w+", encoding="utf-8") as f:
     
-    for package in all_forms:
+    for package in sorted(all_forms):
         f.write(",".join(package) + "\n")
 
 
