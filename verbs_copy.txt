@@ -102,7 +102,6 @@ hören,listen
 informieren,to inform
 kaufen,to buy
 kennen,know
-klicken,click
 kommen,come
 kosten,costs
 laden,load
@@ -129,7 +128,6 @@ nutzen,use
 passen,fit
 passieren,happen
 planen,to plan
-präsentieren,present
 reichen,pass
 richten,judge
 rufen,call
