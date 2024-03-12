@@ -34,7 +34,7 @@ def extract_forms(verbs):
 
 all_forms = []
 
-with open("verbs.csv", "r+", encoding="utf-8") as file:
+with open("verbs.csv", "r", encoding="utf-8") as file:
     text = file.read()
     verbs = [line.split(',')[1] for line in text.split('\n')]
 
@@ -47,9 +47,3 @@ with open("forms.csv", "w+", encoding="utf-8") as f:
     
     for package in sorted(all_forms):
         f.write(",".join(package) + "\n")
-
-
-
-
-
- 
