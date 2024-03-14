@@ -1,2 +1,49 @@
 <WelcomeScreen>:
-    
+    md_bg_color: [0,0,0,0.5]
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "top": .9}
+        size_hint: .7, .5
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: "10dp"
+            pos_hint: {"center_x":.5, "top":1}
+            size_hint: 1, .8
+
+            MDLabel:
+                text: "Welcome to GERB!"
+                valign: "center"
+                halign: "center"
+                font_size: "20dp"
+        
+            MDButton:
+                mode: "filled"
+                theme_width: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .85
+                on_press: 
+                    root.manager.current = "register"
+
+                MDButtonText:
+                    text: "Let's get started!"
+                
+               
+                
+            MDButton:
+                id: login_button
+                mode: "filled"
+                theme_width: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .85
+                on_press: 
+                    root.manager.current = "login"
+        
+                MDButtonText:
+                    text: "I already have an account"
+
+                
