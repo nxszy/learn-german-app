@@ -1,0 +1,77 @@
+<LoginScreen>:
+    md_bg_color: [0,0,0,0.5]
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "top": .9}
+        size_hint: .7, .6
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+
+        MDRelativeLayout:
+            pos_hint: {"center_x":.5, "center_y":.5}
+            size_hint: 1, 1
+            MDBoxLayout:
+                orientation: "vertical"
+                pos_hint: {"center_x":.5, "top":.95}
+                size_hint: .9, .6
+                spacing: "5dp"
+
+                MDLabel:
+                    text: "Welcome to GERB"
+                    valign: "center"
+                    halign: "center"
+                
+                MDTextField:
+                    mode: "filled"
+                    pos_hint: {"center_x":.5}
+
+                    MDTextFieldLeadingIcon:
+                        icon: "account"
+                    
+                    MDTextFieldHintText:
+                        text: "Email"
+                
+                MDTextField:
+                    mode: "filled"
+                    pos_hint: {"center_x":.5}
+
+                    MDTextFieldLeadingIcon:
+                        icon: "key-variant"
+
+                    MDTextFieldHintText:
+                        text: "Password"
+                    
+                    MDIconButton:
+                        pos_hint: {"right":.9, "center_y":.5}
+                        icon: "eye-off"
+                        style: "tonal"
+                
+                MDButton:
+                    mode: "elevated"
+                    theme_width: "Custom"
+                    pos_hint: {"center_x":.5}
+                    size_hint_x: .8
+
+                    MDButtonText:
+                        text: "Login"
+                        pos_hint: {"center_x":.5, "center_y":.5}
+            
+            MDGridLayout:
+                rows: 2
+                #orientation: "vertical"
+                size_hint: .9, .1
+                pos_hint: {"center_x":.85, "top":.2}
+
+                MDLabel:
+                    text: "Don't have an account?"
+                    height: "30dp"
+                    valign: "center"
+
+                MDButton:
+                    style: "text"
+
+                    MDButtonText:
+                        text: "Register now!"
+                    
