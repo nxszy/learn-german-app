@@ -1,0 +1,68 @@
+<RegisterScreen>:
+    name: "register"
+    md_bg_color: [0,0,0,0.5]
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "top": .9}
+        size_hint: .7, .6
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {"center_x":.5, "top":.95}
+            size_hint: .9, .8
+            spacing: "5dp"
+
+            MDTextField:
+                mode: "filled"
+                pos_hint: {"center_x":.5}
+
+                MDTextFieldLeadingIcon:
+                    icon: "account"
+                
+                MDTextFieldHintText:
+                    text: "Username"
+
+            MDTextField:
+                mode: "filled"
+                pos_hint: {"center_x":.5}
+
+                MDTextFieldLeadingIcon:
+                    icon: "email"
+                
+                MDTextFieldHintText:
+                    text: "Email"
+            
+            MDTextField:
+                mode: "filled"
+                pos_hint: {"center_x":.5}
+
+                MDTextFieldLeadingIcon:
+                    icon: "key-variant"
+                
+                MDTextFieldHintText:
+                    text: "Password"
+
+            MDTextField:
+                mode: "filled"
+                pos_hint: {"center_x":.5}
+
+                MDTextFieldLeadingIcon:
+                    icon: "key-variant"
+                
+                MDTextFieldHintText:
+                    text: "Confirm password"
+
+            MDButton:
+                mode: "elevated"
+                theme_width: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .8
+                on_press: root.handle_dialog()
+                
+                MDButtonText:
+                    text: "Register"
+                    pos_hint: {"center_x":.5, "center_y":.5}
