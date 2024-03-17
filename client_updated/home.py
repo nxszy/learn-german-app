@@ -24,4 +24,7 @@ class HomeScreen(MDScreen):
         item_icon: str,
         item_text: str,
     ):
+        print(item_text)
+        #if item_text != "Learn":
+        #    self.ids.screen_manager.get_screen("Learn").ids.learning_manager.current = "Learn"
         self.ids.screen_manager.current = item_text
