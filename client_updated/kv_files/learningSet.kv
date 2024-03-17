@@ -10,20 +10,19 @@
         md_bg_color: "white"
         elevation_level: 2
     
-        MDBoxLayout:
-            orientation: 'vertical'
-            size_hint: .9, .9
-            pos_hint: {"center_x":.5, "center_y":.5}
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {"center_x":.5, "top":.95}
+            size_hint: .9, .8
+            spacing: "5dp"
 
             MDLabel:
                 text: "Choose your learning set"
-                size_hint: 1, .2
-                haling: "center"
-                valign: "center"
+                height: "30dp"
+                halign: "center"
 
             MDScrollView:
-                id: setList
+                id: set_list
                 do_scroll_x: False
                 do_scroll_y: True
                 pos_hint: {"center_x":.5, "top":1}
-                size_hint: 1, .7
