@@ -1,0 +1,29 @@
+<LearningSet>:
+    name: "chooseLS"
+    md_bg_color: [0,0,0,0.5]
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: .9, .85
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+    
+        MDGridLayout:
+            rows: 2
+            size_hint: .9, .9
+            pos_hint: {"center_x":.5, "center_y":.5}
+
+            MDLabel:
+                text: "Choose your learning set"
+                size_hint: 1, .2
+                haling: "center"
+                valign: "center"
+
+            MDScrollView:
+                id: setList
+                do_scroll_x: False
+                do_scroll_y: True
+                pos_hint: {"center_x":.5, "top":1}
+                size_hint: 1, .7

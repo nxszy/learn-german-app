@@ -1,0 +1,66 @@
+<LearningMode>:
+    name: "learnMode"
+    md_bg_color: [0,0,0,0.5]
+
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: .9, .85
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+    
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {"center_x":.5, "top":.95}
+            size_hint: .9, .8
+            spacing: "5dp"
+
+            MDLabel:
+                text: "What do you want to learn today?"
+                valign: "center"
+                halign: "center"
+                height: "30dp"
+
+            MDButton:
+                mode: "elevated"
+                theme_width: "Custom"
+                theme_height: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .8
+                size_hint_y: .3
+                on_press:
+                    root.manager.current = "chooseLS"
+
+                MDButtonText:
+                    text: "Conjugation"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+
+            MDButton:
+                mode: "elevated"
+                theme_width: "Custom"
+                theme_height: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .8
+                size_hint_y: .3
+                on_press:
+                    root.manager.current = "chooseLS"
+
+                MDButtonText:
+                    text: "Past forms"
+                    pos_hint: {"center_x":.5, "center_y":.5}
+
+            MDButton:
+                mode: "elevated"
+                theme_width: "Custom"
+                theme_height: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .8
+                size_hint_y: .3
+                on_press:
+                    root.manager.current = "chooseLS"
+
+                MDButtonText:
+                    text: "Rection"
+                    pos_hint: {"center_x":.5, "center_y":.5}
