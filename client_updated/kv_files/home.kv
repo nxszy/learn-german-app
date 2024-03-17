@@ -1,0 +1,60 @@
+<BaseMDNavigationItem>
+    id: root.id
+
+    MDNavigationItemIcon:
+        icon: root.icon
+
+    MDNavigationItemLabel:
+        text: root.text
+
+<LearningHomeScreen>:
+    name: "Learn"
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDScreenManager:
+            id: learning_manager
+            
+            LearningMode:
+                name: "learnMode"
+
+            LearningSet:
+                name: "chooseLS"
+
+<ProfileHomeScreen>:
+    name: "Profile"
+
+    MDLabel:
+        text: "Siema"
+        haling: "center"
+        valing: "center"
+
+<HomeScreen>:
+    name: "home"
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDScreenManager:
+            id: screen_manager
+
+            LearningHomeScreen:
+                name: "Learn"
+
+            ProfileHomeScreen:
+                name: "Profile"
+
+        MDNavigationBar:
+            on_switch_tabs: root.on_switch_tabs(*args)
+
+            BaseMDNavigationItem:
+                icon: "book"
+                text: "Learn"
+                active: True
+
+            BaseMDNavigationItem:
+                icon: "account"
+                text: "Profile"
+
+
+
