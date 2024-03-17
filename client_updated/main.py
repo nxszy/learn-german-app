@@ -4,7 +4,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from os import listdir, path
 
-import welcome_screen, login, register
+import welcome_screen, login, register, home, learningSet
 
 for file in listdir("./client_updated/kv_files"):
     f = path.join("./client_updated/kv_files/", file)
@@ -18,11 +18,13 @@ class App(MDApp):
         Window.size = (420, 640)
         self.title = "Gerb"
 
-        sm = MainManager()
-        sm.add_widget(welcome_screen.WelcomeScreen())
-        sm.add_widget(login.LoginScreen())
-        sm.add_widget(register.RegisterScreen())
-        return sm
+        mainSM = MainManager()
+        mainSM.add_widget(welcome_screen.WelcomeScreen())
+        mainSM.add_widget(login.LoginScreen())
+        mainSM.add_widget(register.RegisterScreen())
+        mainSM.add_widget(home.HomeScreen())
+        
+        return mainSM
 
 if __name__ == "__main__":
     
