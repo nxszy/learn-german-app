@@ -3,7 +3,7 @@ from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.navigationbar import MDNavigationBar, MDNavigationItem
 from kivy.properties import StringProperty
 
-import learningSet, learningMode
+import client_updated.learning_set as learning_set, client_updated.learning_mode as learning_mode
 
 class BaseMDNavigationItem(MDNavigationItem):
     icon = StringProperty()
@@ -24,7 +24,6 @@ class HomeScreen(MDScreen):
         item_icon: str,
         item_text: str,
     ):
-        print(item_text)
         if item_text != 'Learn':
            self.ids.screen_manager.get_screen('Learn').ids.learning_manager.current = 'learnMode'
         self.ids.screen_manager.current = item_text

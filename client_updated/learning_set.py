@@ -22,3 +22,6 @@ class LearningSet(MDScreen):
 
     def handle_set_button(self, instance, id):
         pass
+
+    def on_leave(self):
+        self.ids['set_list'].clear_widgets()
