@@ -4,7 +4,11 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from os import listdir, path
 
-import welcome_screen, login, register, home, learningSet
+from kivy.clock import Clock
+
+Clock.max_iteration = 30
+
+import welcome_screen, login, register, home, learning_mode, learning_set, quiz_home, quiz_conjugation
 
 for file in listdir("./client_updated/kv_files"):
     f = path.join("./client_updated/kv_files/", file)

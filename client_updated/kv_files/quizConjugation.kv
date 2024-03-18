@@ -1,0 +1,87 @@
+<QuizConjugation>:
+    name: "conjugation"
+    md_bg_color: [0,0,0,0.5]
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: .9, .85
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {"center_x":.5, "top":.95}
+            size_hint: .9, .8
+            spacing: "5dp"
+
+            MDLabel:
+                text: "verb"
+                halign: "center"
+                size_hint: .9, .1
+                pos_hint: {"center_x":.5}
+
+            MDTextField:
+                mode: "outlined"
+                pos_hint: {"center_x":.5}
+                size_hint: .9, .15
+
+            MDGridLayout:
+                rows: 3
+                cols: 2
+                size_hint: .9, .45
+                pos_hint: {"center_x":.5, "top":.1}
+                spacing: "5dp"
+
+                MDTextField:
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "ich"
+
+                MDTextField:
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "du"
+                
+                MDTextField:
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "er/sie/es"
+
+                MDTextField:
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "wir"
+
+                MDTextField:
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "ihr"
+                
+                MDTextField:
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "sie/Sie"
+
+            MDButton:
+                mode: "elevated"
+                theme_width: "Custom"
+                pos_hint: {"center_x":.5}
+                size_hint_x: .8
+                
+                MDButtonText:
+                    text: "Check"
+                    pos_hint: {"center_x":.5, "center_y":.5}

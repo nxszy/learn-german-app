@@ -3,7 +3,7 @@ from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.navigationbar import MDNavigationBar, MDNavigationItem
 from kivy.properties import StringProperty
 
-import client_updated.learning_set as learning_set, client_updated.learning_mode as learning_mode
+import learning_set, learning_mode
 
 class BaseMDNavigationItem(MDNavigationItem):
     icon = StringProperty()
@@ -14,6 +14,11 @@ class ProfileHomeScreen(MDScreen):
 
 class LearningHomeScreen(MDScreen):
     pass
+
+class LearningManager(MDScreenManager):
+    
+    mode = StringProperty()
+    bar = None
 
 class HomeScreen(MDScreen):
     

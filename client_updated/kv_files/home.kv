@@ -12,7 +12,7 @@
     MDBoxLayout:
         orientation: "vertical"
 
-        MDScreenManager:
+        LearningManager:
             id: learning_manager
             
             LearningMode:
@@ -47,6 +47,7 @@
                 name: "Profile"
 
         MDNavigationBar:
+            id: bottom_nav
             on_switch_tabs: root.on_switch_tabs(*args)
 
             BaseMDNavigationItem:
