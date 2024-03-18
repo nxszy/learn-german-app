@@ -17,12 +17,8 @@ class App(MDApp):
     def build(self):
         Window.size = (420, 640)
         self.title = "Gerb"
-
+ 
         mainSM = MainManager()
-        mainSM.add_widget(welcome_screen.WelcomeScreen())
-        mainSM.add_widget(login.LoginScreen())
-        mainSM.add_widget(register.RegisterScreen())
-        mainSM.add_widget(home.HomeScreen())
         
         return mainSM
 
