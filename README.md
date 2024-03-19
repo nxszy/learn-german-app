@@ -9,6 +9,9 @@ Due to the major kivymd update (from version 1.2 to 2.0.0) I decided to refactor
 #### Ep. 2
 After a rather painful weekend app refactor is almost complete - only few screens missing.
 
+#### Ep. 3
+Using kivy and kivymd might not be the greatest idea I had. Writing an app, that is complex to say the least, is rather frustraiting. Moments before completing one of the parts of the project I ran into kivy.Clock issue. What that basically means is: there are too many widgets and too many diffrent task to handle for kivy to work on its basic clock speed. Tragedy.
+
 ## DEV SECTION - USEFUL LINKS
 🦄 [ICONS](https://pictogrammers.com/library/mdi/)
 
