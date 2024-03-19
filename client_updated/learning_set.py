@@ -16,8 +16,14 @@ class LearningSet(MDScreen):
                                id="0", style="elevated", theme_width="Custom", 
                                size_hint=(None, None), width="300", pos_hint={"center_x":0.5, "top":.95}, 
                                on_release=partial(self.handle_set_button, 0),)
+        
+        default_btn_top10 = MDButton(MDButtonText(text="Top 10",pos_hint={"center_x":.5, "center_y":.5}), 
+                               id="0", style="elevated", theme_width="Custom", 
+                               size_hint=(None, None), width="300", pos_hint={"center_x":0.5, "top":.95}, 
+                               on_release=partial(self.handle_set_button, 1),)
     
         self.buttonBox.add_widget(default_btn)
+        self.buttonBox.add_widget(default_btn_top10)
 
         self.ids['set_list'].add_widget(self.buttonBox)
 
@@ -27,9 +33,13 @@ class LearningSet(MDScreen):
         self.manager.current = self.manager.mode
 
     def get_learning_set(self, id):
+        self.manager.learningSet.clear()
+
         match id:
             case 0:
                 verbs = requests.get('http://127.0.0.1:8000/conj/').json()
+            case 1:
+                verbs = requests.get('http://127.0.0.1:8000/conj/').json()[:10]
         
         for i, verb in enumerate(verbs):
             self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 

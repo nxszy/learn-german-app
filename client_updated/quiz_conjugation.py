@@ -25,6 +25,7 @@ class QuizConjugation(MDScreen):
 
     def on_enter(self):
         self.iter = 0
+        self.ids['progress_bar'].max = len(self.manager.learningSet)
         self.reset_screen()
 
     def check_content(self):
@@ -53,9 +54,12 @@ class QuizConjugation(MDScreen):
             self.reset_screen()
 
         elif self.ids['check_text'].text == "Results":
-            percent = (round(self.points,1) / self.manager.maxPoints)
 
-            mess = self.manager.get_screen('ResultsScreen').ids['message']
+            max_points = len(self.manager.learningSet) * 7 
+
+            percent = (round(self.points,1) / max_points)
+
+            mess = self.manager.get_screen('resultsScreen').ids['message']
             if 0.0 <= percent < 0.5:
                 mess.text = 'You can do better!'
             elif 0.5 <= percent < 0.65:
@@ -65,8 +69,8 @@ class QuizConjugation(MDScreen):
             else:
                 mess.text = 'Congrats! You rock!'
 
-            self.manager.get_screen('ResultsScreen').ids['result'].text = f"You got \n {round(self.points,1)} / {self.manager.maxPoints} \n That's {(round(self.points,1) / self.manager.maxPoints)*100}%"
-            self.manager.current = 'ResultsScreen'
+            self.manager.get_screen('resultsScreen').ids['result'].text = f"You got \n {round(self.points,1)} / {max_points} \n That's {(round(self.points,1) / max_points)*100}%"
+            self.manager.current = 'resultsScreen'
     
     def on_cancel_button(self):
         if not self.dialog:
