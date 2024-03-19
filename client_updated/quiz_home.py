@@ -1,6 +1,11 @@
 from kivymd.uix.screen import MDScreen
+from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.navigationbar import MDNavigationBar
 from kivymd.app import App
+
+class QuizManager(MDScreenManager):
+
+    learningSet = {}
 
 class QuizHomeScreen(MDScreen):
 

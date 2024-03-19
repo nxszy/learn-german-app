@@ -1,7 +1,7 @@
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
 from kivymd.uix.navigationbar import MDNavigationBar, MDNavigationItem
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, NumericProperty
 
 import learning_set, learning_mode
 
@@ -16,9 +16,9 @@ class LearningHomeScreen(MDScreen):
     pass
 
 class LearningManager(MDScreenManager):
-    
+
     mode = StringProperty()
-    bar = None
+    learningSet = {}
 
 class HomeScreen(MDScreen):
     
