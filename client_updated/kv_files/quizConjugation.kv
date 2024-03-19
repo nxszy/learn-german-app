@@ -26,7 +26,6 @@
                     id: progress_bar
                     size_hint: .8, 1
                     min: 0
-                    max: len(root.manager.learningSet)
                 
                 MDIconButton:
                     style: "outlined"
@@ -43,6 +42,7 @@
 
                 MDLabel:
                     id: r_word
+                    text: ""
                     halign: "center"
                     size_hint: .9, .1
                     pos_hint: {"center_x":.5}

@@ -25,14 +25,11 @@ class QuizConjugation(MDScreen):
 
     def on_enter(self):
         self.iter = 0
-        #self.ids['progress_bar'].max = len(self.manager.learningSet)
-        #self.reset_screen()
+        self.reset_screen()
 
     def check_content(self):
 
-        c_btn_text = self.ids['check_text'].text
-        
-        if c_btn_text == "Check":
+        if self.ids['check_text'].text == "Check":
 
             for i, id in enumerate(self.tf_ids):
 
@@ -48,14 +45,14 @@ class QuizConjugation(MDScreen):
             self.ids['progress_bar'].value = self.iter
             
             if self.iter < len(self.manager.learningSet):
-                c_btn_text = "Next"
+                self.ids['check_text'].text = "Next"
             else:
-                c_btn_text = "Results"
+                self.ids['check_text'].text = "Results"
         
-        elif c_btn_text == "Next":
+        elif self.ids['check_text'].text == "Next":
             self.reset_screen()
 
-        elif c_btn_text.text == "Results":
+        elif self.ids['check_text'].text == "Results":
             percent = (round(self.points,1) / self.manager.maxPoints)
 
             mess = self.manager.get_screen('ResultsScreen').ids['message']
@@ -99,7 +96,7 @@ class QuizConjugation(MDScreen):
 
         if response == 0:            
             self.ids['progress_bar'].value = 0
-            self.manager.current = 'LearnMode'
+            self.manager.current = 'learnMode'
         self.dialog.dismiss()
 
     def reset_screen(self):
