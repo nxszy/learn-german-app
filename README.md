@@ -12,6 +12,9 @@ After a rather painful weekend app refactor is almost complete - only few screen
 #### Ep. 3
 Using kivy and kivymd might not be the greatest idea I had. Writing an app, that is complex to say the least, is rather frustraiting. Moments before completing one of the parts of the project I ran into kivy.Clock issue. What that basically means is: there are too many widgets and too many diffrent task to handle for kivy to work on its basic clock speed. Tragedy.
 
+#### Ep. 4
+It turned to be OK - never lose faith in yourself or something :D. I am definitely making some progress. Basic app implemention should be ready in two weeks or so!
+
 ## DEV SECTION - USEFUL LINKS
 🦄 [ICONS](https://pictogrammers.com/library/mdi/)
 
