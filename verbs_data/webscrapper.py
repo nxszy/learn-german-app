@@ -43,7 +43,7 @@ with ThreadPoolExecutor(max_workers=10) as executor:
 
 print(all_forms)
 
-with open("forms.csv", "w+", encoding="utf-8") as f:
+with open("conjugation/forms.csv", "w+", encoding="utf-8") as f:
     
     for package in sorted(all_forms):
         f.write(",".join(package) + "\n")
