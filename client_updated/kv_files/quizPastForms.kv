@@ -1,0 +1,86 @@
+<QuizPastForms>:
+    name: "past_forms"
+    md_bg_color: [0,0,0,0.5]
+    MDCard:
+        style: "elevated"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        size_hint: .9, .85
+        shadow_color: "green"
+        theme_bg_color: "Custom"
+        md_bg_color: "white"
+        elevation_level: 2
+
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {"center_x":.5, "top":.95}
+            size_hint: .9, .9
+            spacing: "7dp"
+
+            GridLayout:
+                cols: 2
+                size_hint: .9, .1
+                pos_hint: {"center_x":.5, "top":1}
+                spacing: "5dp"
+
+                MDLinearProgressIndicator:
+                    id: progress_bar
+                    size_hint: .8, 1
+                    min: 0
+                
+                MDIconButton:
+                    style: "outlined"
+                    icon: "close"
+                    pos_hint: {"center_y":.5}
+                    size_hint: .12, 1
+                    on_press: 
+                        root.on_cancel_button()
+
+            GridLayout:
+                rows: 2
+                size_hint: .9, .2
+                pos_hint: {"center_x":.5, "top":1}
+
+                MDLabel:
+                    id: r_word
+                    text: ""
+                    halign: "center"
+                    size_hint: .9, .1
+                    pos_hint: {"center_x":.5}
+
+                MDTextField:
+                    id: inf
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "infinitive"
+
+            MDTextField:
+                id: prateritum
+                mode: "outlined"
+                pos_hint: {"center_x":.5}
+                
+                MDTextFieldHintText:
+                    text: "präteritum"
+            
+            MDTextField:
+                id: partizip
+                mode: "outlined"
+                pos_hint: {"center_x":.5}
+                
+                MDTextFieldHintText:
+                    text: "partizip II"
+
+            MDButton:
+                id: check_button
+                mode: "elevated"
+                theme_width: "Custom"
+                pos_hint: {"center_x":.5, "top":.8}
+                size_hint_x: .8
+                on_press:
+                    root.check_content()
+
+                MDButtonText:
+                    id: check_text
+                    text: "Check"
+                    pos_hint: {"center_x":.5, "center_y":.5}

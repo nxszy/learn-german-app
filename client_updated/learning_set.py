@@ -35,16 +35,27 @@ class LearningSet(MDScreen):
     def get_learning_set(self, id):
         self.manager.learningSet.clear()
 
-        match id:
-            case 0:
-                verbs = requests.get('http://127.0.0.1:8000/conj/').json()
-            case 1:
-                verbs = requests.get('http://127.0.0.1:8000/conj/').json()[:10]
+        if self.manager.mode == "conjugation":
+
+            match id:
+                case 0:
+                    verbs = requests.get('http://127.0.0.1:8000/conj/').json()
+                case 1:
+                    verbs = requests.get('http://127.0.0.1:8000/conj/').json()[:10]
+            
+            for i, verb in enumerate(verbs):
+                self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 
+                                        verb['sg_Ip_form'], verb['sg_IIp_form'], verb['sg_IIIp_form'],
+                                        verb['pl_Ip_form'], verb['pl_IIp_form'], verb['pl_IIIp_form']]
         
-        for i, verb in enumerate(verbs):
-            self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 
-                                    verb['sg_Ip_form'], verb['sg_IIp_form'], verb['sg_IIIp_form'],
-                                    verb['pl_Ip_form'], verb['pl_IIp_form'], verb['pl_IIIp_form']]
+        elif self.manager.mode == "past_forms":
+
+            match id:
+                case 0:
+                    verbs = requests.get('http://127.0.0.1:8000/past_forms/').json()
+                case 1:
+                    verbs = requests.get('http://127.0.0.1:8000/past_forms/').json()[:10]
+                    
 
     def on_leave(self):
         self.ids['set_list'].clear_widgets()

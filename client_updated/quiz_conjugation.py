@@ -25,6 +25,7 @@ class QuizConjugation(MDScreen):
 
     def on_enter(self):
         self.iter = 0
+        self.ids['progress_bar'].value = self.iter
         self.ids['progress_bar'].max = len(self.manager.learningSet)
         self.reset_screen()
 
