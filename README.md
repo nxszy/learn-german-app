@@ -1,5 +1,6 @@
-# learn-german-app
-Mobile/desktop app for learning german verbs - conjugation/rection/past forms. Also provides an easy way for teachers to give their students a test.
+<p align="center">
+  <img src="" alt="banner"/>
+</p>
 
 ## DEV UPDATES
 
