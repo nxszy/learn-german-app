@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ConjugationConfig(AppConfig):
+class VerbConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'conjugation'
+    name = 'verbs'
