@@ -59,6 +59,10 @@ class LearningSet(MDScreen):
             for i, verb in enumerate(verbs):
                 self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 
                                         verb['prateritum'], verb['partizip2']]
+        
+        else:
+
+            self.manager.learningSet[0] = ['achten', 'auf', 'akkusativ']
                     
 
     def on_leave(self):
