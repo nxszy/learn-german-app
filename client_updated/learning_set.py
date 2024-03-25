@@ -10,7 +10,7 @@ class LearningSet(MDScreen):
     
     def on_enter(self, *args):
 
-        self.buttonBox = MDBoxLayout(orientation="vertical", spacing="5dp", size_hint=(.9,.9), pos_hint={"center_x":0.5, "top":1})
+        self.buttonBox = MDBoxLayout(orientation="vertical", spacing="5dp", size_hint=(1,1), pos_hint={"center_x":0.5, "top":1})
         
         default_btn = MDButton(MDButtonText(text="Default",pos_hint={"center_x":.5, "center_y":.5}), 
                                id="0", style="elevated", theme_width="Custom", 
@@ -39,9 +39,9 @@ class LearningSet(MDScreen):
 
             match id:
                 case 0:
-                    verbs = requests.get('http://127.0.0.1:8000/conj/').json()
+                    verbs = requests.get('http://127.0.0.1:8000/verbs/conjugation').json()
                 case 1:
-                    verbs = requests.get('http://127.0.0.1:8000/conj/').json()[:10]
+                    verbs = requests.get('http://127.0.0.1:8000/verbs/conjugation').json()[:10]
             
             for i, verb in enumerate(verbs):
                 self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 
@@ -52,9 +52,13 @@ class LearningSet(MDScreen):
 
             match id:
                 case 0:
-                    verbs = requests.get('http://127.0.0.1:8000/past_forms/').json()
+                    verbs = requests.get('http://127.0.0.1:8000/verbs/past-forms').json()
                 case 1:
-                    verbs = requests.get('http://127.0.0.1:8000/past_forms/').json()[:10]
+                    verbs = requests.get('http://127.0.0.1:8000/verbs/past-forms').json()[:10]
+
+            for i, verb in enumerate(verbs):
+                self.manager.learningSet[i] = [verb['translation'], verb['infinitive'], 
+                                        verb['prateritum'], verb['partizip2']]
                     
 
     def on_leave(self):

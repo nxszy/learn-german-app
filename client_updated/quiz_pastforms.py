@@ -6,14 +6,14 @@ from functools import partial
 from kivymd.uix.widget import Widget
 from kivymd.app import App
 
-class QuizConjugation(MDScreen):
+class QuizPastForms(MDScreen):
 
     dialog = None
 
     points = 0
     iter = NumericProperty(0)
 
-    tf_ids = ["inf", "sg_I", "sg_II", "sg_III", "pl_I", "pl_II", "pl_III"]
+    tf_ids = ["inf", "pra", "par2"]
     
     def on_pre_enter(self):
         
@@ -22,7 +22,7 @@ class QuizConjugation(MDScreen):
         bottom_nav = home_screen.ids.bottom_nav
 
         bottom_nav.opacity = 0
-
+    
     def on_enter(self):
         self.iter = 0
         self.ids['progress_bar'].value = self.iter
@@ -58,9 +58,9 @@ class QuizConjugation(MDScreen):
 
         elif self.ids['check_text'].text == "Results":
 
-            max_points = len(self.manager.learningSet) * 7 
+            max_points = len(self.manager.learningSet) * 3 
 
-            percent = round(self.points/max_points, 2)
+            percent = round(self.points/max_points,2)
 
             mess = self.manager.get_screen('resultsScreen').ids['message']
             if 0.0 <= percent < 0.5:

@@ -35,41 +35,44 @@
                     on_press: 
                         root.on_cancel_button()
 
-            GridLayout:
-                rows: 2
-                size_hint: .9, .2
-                pos_hint: {"center_x":.5, "top":1}
 
-                MDLabel:
-                    id: r_word
-                    text: ""
-                    halign: "center"
-                    size_hint: .9, .1
-                    pos_hint: {"center_x":.5}
+            MDLabel:
+                id: r_word
+                text: ""
+                halign: "center"
+                size_hint: .9, .15
+                pos_hint: {"center_x":.5}
+
+            GridLayout:
+                rows: 3
+                size_hint: .9, .6
+                pos_hint: {"center_x":.5}
+                spacing: "7dp"
 
                 MDTextField:
                     id: inf
                     mode: "outlined"
                     pos_hint: {"center_x":.5}
+                    theme_bg_color: "Custom"
                     
                     MDTextFieldHintText:
                         text: "infinitive"
 
-            MDTextField:
-                id: prateritum
-                mode: "outlined"
-                pos_hint: {"center_x":.5}
+                MDTextField:
+                    id: pra
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "präteritum"
                 
-                MDTextFieldHintText:
-                    text: "präteritum"
-            
-            MDTextField:
-                id: partizip
-                mode: "outlined"
-                pos_hint: {"center_x":.5}
-                
-                MDTextFieldHintText:
-                    text: "partizip II"
+                MDTextField:
+                    id: par2
+                    mode: "outlined"
+                    pos_hint: {"center_x":.5}
+                    
+                    MDTextFieldHintText:
+                        text: "partizip II"
 
             MDButton:
                 id: check_button
