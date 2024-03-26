@@ -20,6 +20,9 @@ Using kivy and kivymd might not be the greatest idea I had. Writing an app, that
 #### Ep. 4
 It turned to be OK - never lose faith in yourself or something :D. I am definitely making some progress. Basic app implemention should be ready in two weeks or so!
 
+#### Ep. 5
+Ugly af, but fully operational version of the app is almost complete. All is left to do: webscrapp verbs for past-forms and rection sections and implement a simple profile screen.
+
 ## DEV-helper
 🦄 [ICONS](https://pictogrammers.com/library/mdi/)
 🐕‍🦺 [DOCUMENTATION](https://kivymd.readthedocs.io/en/1.1.1/)
