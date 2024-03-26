@@ -18,3 +18,9 @@ def past_forms(request):
     past_forms = PastForm.objects.all()
     serializer = PastFormSerializer(past_forms, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
+def rection_verbs(request):
+    rection_verbs = RectionVerb.objects.all()
+    serializer = RectionSerializer(rection_verbs, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)

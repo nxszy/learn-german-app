@@ -13,3 +13,9 @@ class PastFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = PastForm
         fields = ['translation', 'infinitive', 'prateritum', 'partizip2']
+
+class RectionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = RectionVerb
+        fields = ['translation', 'infinitive', 'preposition', 'case']
