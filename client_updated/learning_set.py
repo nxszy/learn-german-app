@@ -62,7 +62,7 @@ class LearningSet(MDScreen):
         
         else:
 
-            self.manager.learningSet[0] = ['achten', 'auf', 'akkusativ']
+            self.manager.learningSet[0] = ['respect','achten', 'auf', 'Akkusativ']
                     
 
     def on_leave(self):
